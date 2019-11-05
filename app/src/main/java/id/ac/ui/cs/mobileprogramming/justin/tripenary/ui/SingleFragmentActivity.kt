@@ -10,7 +10,7 @@ abstract class SingleFragmentActivity : AppCompatActivity() {
 
     private val layoutResId: Int
         @LayoutRes
-        get() = R.layout.activity_fragment
+        get() = R.layout.root_activity_fragment
 
     protected abstract fun createFragment(): Fragment
 
@@ -27,8 +27,10 @@ abstract class SingleFragmentActivity : AppCompatActivity() {
             fragment = createFragment()
             // create and commit a fragment transaction
             fm.beginTransaction()
-                .add(R.id.fragment_scroll_view, fragment)
+                .add(R.id.main_fragment, fragment)
                 .commit()
+        } else {
+            println(fragment)
         }
     }
 }

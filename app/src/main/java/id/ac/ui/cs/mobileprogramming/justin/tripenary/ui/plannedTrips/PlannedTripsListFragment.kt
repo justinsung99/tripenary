@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.model.PlannedTrips
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.R
 import kotlinx.android.synthetic.main.fragment_planned_trips.*
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.addPlannedTrips.AddPlannedTripsFragment
 
 class PlannedTripsListFragment: Fragment() {
     private val mPlannedTrips = listOf(
@@ -46,6 +48,23 @@ class PlannedTripsListFragment: Fragment() {
             layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
             adapter = PlannedTripsListAdapter(mPlannedTrips)
+        }
+
+        // set onclick listener on "+ add planned trips" button
+        add_planned_trips_button.setOnClickListener {
+            val fm = activity?.supportFragmentManager
+
+            val fragment = AddPlannedTripsFragment.newInstance()
+
+            if (fm != null) {
+                fm.beginTransaction()
+                    .replace(R.id.main_fragment, fragment)
+                    .addToBackStack(null)
+                    .commit()
+            } else {
+                Toast.makeText(activity, "[debug] fm not loaded", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 

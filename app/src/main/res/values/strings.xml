@@ -5,4 +5,17 @@
     <string name="add_planned_trips">+ Add Planned Trips</string>
     <string name="right_arrow">Right Arrow</string>
     <string name="planned_trips_label">My Planned Trips</string>
+    <string name="add_new_trips_label">Add New Trips</string>
+    
+    <string name="label_trip_name">Trip Name</string>
+    <string name="label_start_date">Start Date</string>
+    <string name="label_end_date">End Date</string>
+    <string name="add">Add</string>
+    <string name="label_slash">/</string>
+    <string name="date_picker_dialog">date picker dialog</string>
+    <string name="dd_placeholder">01</string>
+    <string name="mm_placeholder">01</string>
+    <string name="yyyy_placeholder">1970</string>
+    <string name="cancel">cancel</string>
+
 </resources>
