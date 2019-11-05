@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.model.PlannedTrips
 
-class ListAdapter(private val list:List<PlannedTrips>)
+class PlannedTripsListAdapter(private val list:List<PlannedTrips>)
     : RecyclerView.Adapter<PlannedTripsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlannedTripsViewHolder {

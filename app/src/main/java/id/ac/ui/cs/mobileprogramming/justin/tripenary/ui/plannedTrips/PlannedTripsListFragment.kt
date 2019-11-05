@@ -45,7 +45,7 @@ class PlannedTripsListFragment: Fragment() {
 
             layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
-            adapter = ListAdapter(mPlannedTrips)
+            adapter = PlannedTripsListAdapter(mPlannedTrips)
         }
     }
 
