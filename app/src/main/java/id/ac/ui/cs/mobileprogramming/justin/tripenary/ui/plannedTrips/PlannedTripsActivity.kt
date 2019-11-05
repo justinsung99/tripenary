@@ -1,13 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips
 
-import android.os.Bundle
-import android.os.PersistableBundle
-import androidx.appcompat.app.AppCompatActivity
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.SingleFragmentActivity
 
-class PlannedTripsActivity: AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+class PlannedTripsActivity: SingleFragmentActivity() {
+    override fun createFragment() = PlannedTripsListFragment.newInstance()
 }

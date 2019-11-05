@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Tripenary</string>
+    <string name="place_placeholder">Some Place</string>
+    <string name="date_placeholder">01 Jan 2019 &#8211; 02 Jan 2019</string>
+    <string name="add_planned_trips">+ Add Planned Trips</string>
+    <string name="right_arrow">Right Arrow</string>
+    <string name="planned_trips_label">My Planned Trips</string>
 </resources>

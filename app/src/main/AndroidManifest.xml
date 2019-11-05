@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.plannedTrips.PlannedTripsActivity">
+        <activity android:name="id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips.PlannedTripsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
