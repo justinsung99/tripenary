@@ -1,15 +1,18 @@
 package id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.model.PlannedTrips
 
-class PlannedTripsListAdapter(private val list:List<PlannedTrips>)
+class PlannedTripsListAdapter internal constructor(context: Context?)
     : RecyclerView.Adapter<PlannedTripsViewHolder>() {
 
+    private val inflater: LayoutInflater = LayoutInflater.from(context)
+    private var list = emptyList<PlannedTrips>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlannedTripsViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
         return PlannedTripsViewHolder(inflater, parent)
     }
 
@@ -17,6 +20,11 @@ class PlannedTripsListAdapter(private val list:List<PlannedTrips>)
         val plannedTrips: PlannedTrips = list[position]
         println(plannedTrips)
         holder.bind(plannedTrips)
+    }
+
+    internal fun setPlannedTrips(plannedTrips: List<PlannedTrips>) {
+        this.list = plannedTrips
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int = list.size

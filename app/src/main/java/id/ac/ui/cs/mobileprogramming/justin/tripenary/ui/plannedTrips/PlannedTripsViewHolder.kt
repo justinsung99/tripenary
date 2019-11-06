@@ -12,12 +12,10 @@ class PlannedTripsViewHolder(inflater: LayoutInflater, parent:ViewGroup) :
         RecyclerView.ViewHolder(inflater.inflate(R.layout.planned_trips_item, parent, false)) {
     private var mPlaceView: TextView? = null
     private var mDateView: TextView? = null
-//    private var arrow: ImageView? = null
 
     init {
         mPlaceView = itemView.findViewById(R.id.planned_trips_place)
         mDateView = itemView.findViewById(R.id.planned_trips_date)
-//        arrow = itemView.findViewById(R.id.arrow_right)
     }
 
     fun bind(plannedTrips: PlannedTrips) {
