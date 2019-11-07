@@ -1,6 +1,5 @@
 package id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +7,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.model.PlannedTrips
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.R
 import kotlinx.android.synthetic.main.fragment_planned_trips.*
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.addPlannedTrips.AddPlannedTripsFragment
+import androidx.lifecycle.ViewModelProviders
+import android.provider.ContactsContract.CommonDataKinds.Note
+
+
+
 
 class PlannedTripsListFragment: Fragment() {
 //    private val mPlannedTrips = listOf(
@@ -55,11 +58,17 @@ class PlannedTripsListFragment: Fragment() {
             adapter = mAdapter
         }
 
-        plannedTripsViewModel = ViewModelProvider(this).get(PlannedTripsViewModel::class.java)
-        plannedTripsViewModel.allPlannedTrips.observe(this, Observer { plannedTrips ->
-            // update the cached copy of trips in adapter
-            plannedTrips?.let { mAdapter.setPlannedTrips(it) }
+        plannedTripsViewModel = ViewModelProviders.of(this).get(PlannedTripsViewModel::class.java)
+        plannedTripsViewModel.getAllPlannedTrips().observe(this, Observer<List<PlannedTrips>> {
+            //update RecyclerView
+                plannedTrips -> mAdapter.setPlannedTrips(plannedTrips)
         })
+
+//        plannedTripsViewModel = ViewModelProvider(this).get(PlannedTripsViewModel::class.java)
+//        plannedTripsViewModel.allPlannedTrips.observe(this, Observer { plannedTrips ->
+//            // update the cached copy of trips in adapter
+//            plannedTrips?.let { mAdapter.setPlannedTrips(it) }
+//        })
 
         // set onclick listener on "+ add planned trips" button
         add_planned_trips_button.setOnClickListener {

@@ -1,10 +1,9 @@
 package id.ac.ui.cs.mobileprogramming.justin.tripenary.model
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
+import androidx.room.Delete
+import androidx.room.Update
 
 @Dao
 interface PlannedTripsDao {
@@ -12,8 +11,17 @@ interface PlannedTripsDao {
     fun all(): LiveData<List<PlannedTrips>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(plannedTrip: PlannedTrips)
+    fun insert(plannedTrips: PlannedTrips)
+
+    @Delete
+    fun delete(plannedTrips: PlannedTrips)
+
+    @Update
+    fun update(plannedTrips: PlannedTrips)
+
+//    @Insert(onConflict = OnConflictStrategy.IGNORE)
+//    suspend fun insert(plannedTrip: PlannedTrips)
 
     @Query("DELETE FROM planned_trips")
-    suspend fun deleteAll()
+    fun deleteAll()
 }
