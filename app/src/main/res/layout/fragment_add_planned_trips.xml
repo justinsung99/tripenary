@@ -61,11 +61,18 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    />
+
+                <Spinner
                     android:id="@+id/start_date_dd_input"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dd_placeholder" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:dropDownWidth="75dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,11 +80,12 @@
                     android:text="@string/label_slash"
                     android:textSize="10pt" />
 
-                <com.google.android.material.textfield.TextInputEditText
+                <Spinner
                     android:id="@+id/start_date_mm_input"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mm_placeholder" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:dropDownWidth="75dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -89,15 +97,16 @@
                     android:id="@+id/start_date_yyyy_input"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:text="@string/yyyy_placeholder" />
 
-                <ImageButton
-                    android:id="@+id/new_planned_trips_start_date_dialogpicker"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="16dp"
-                    android:contentDescription="@string/date_picker_dialog"
-                    android:src="@drawable/ic_calendar" />
+<!--                <ImageButton-->
+<!--                    android:id="@+id/new_planned_trips_start_date_dialogpicker"-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:contentDescription="@string/date_picker_dialog"-->
+<!--                    android:src="@drawable/ic_calendar" />-->
 
             </LinearLayout>
         </LinearLayout>
@@ -125,11 +134,12 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <Spinner
                     android:id="@+id/end_date_dd_input"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dd_placeholder" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:dropDownWidth="75dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -137,11 +147,12 @@
                     android:text="@string/label_slash"
                     android:textSize="10pt" />
 
-                <com.google.android.material.textfield.TextInputEditText
+                <Spinner
                     android:id="@+id/end_date_mm_input"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mm_placeholder" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:dropDownWidth="75dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -153,15 +164,16 @@
                     android:id="@+id/end_date_yyyy_input"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:text="@string/yyyy_placeholder" />
 
-                <ImageButton
-                    android:id="@+id/new_planned_trips_end_date_dialogpicker"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="16dp"
-                    android:contentDescription="@string/date_picker_dialog"
-                    android:src="@drawable/ic_calendar" />
+<!--                <ImageButton-->
+<!--                    android:id="@+id/new_planned_trips_end_date_dialogpicker"-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:contentDescription="@string/date_picker_dialog"-->
+<!--                    android:src="@drawable/ic_calendar" />-->
 
             </LinearLayout>
         </LinearLayout>

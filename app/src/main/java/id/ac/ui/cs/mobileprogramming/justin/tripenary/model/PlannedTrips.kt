@@ -8,4 +8,8 @@ import androidx.room.PrimaryKey
  * @param endDate: temporary casted to String
  * */
 @Entity(tableName = "planned_trips")
-data class PlannedTrips(@PrimaryKey(autoGenerate = true) val id: Int, val place: String, val startDate: String, val endDate: String)
+data class PlannedTrips(val place: String, val startDate: String, val endDate: String) {
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+
+}

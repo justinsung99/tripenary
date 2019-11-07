@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,25 +14,42 @@ import id.ac.ui.cs.mobileprogramming.justin.tripenary.R
 import kotlinx.android.synthetic.main.fragment_planned_trips.*
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.addPlannedTrips.AddPlannedTripsFragment
 import androidx.lifecycle.ViewModelProviders
-import android.provider.ContactsContract.CommonDataKinds.Note
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_END_DATE
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_PLACE
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_START_DATE
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.NEW_PLANNED_TRIPS
 
 
 
 
 class PlannedTripsListFragment: Fragment() {
-//    private val mPlannedTrips = listOf(
-//        PlannedTrips(0, "Jakarta", "29 Aug 2019", "31 Aug 2019"),
-//        PlannedTrips(1, "Bali", "29 Sep 2019", "02 Oct 2019"),
-//        PlannedTrips(2, "Bandung", "29 Aug 2019", "31 Aug 2019"),
-//        PlannedTrips(3, "Japan", "02 Jan 2019", "31 Feb 2019"),
-//        PlannedTrips(4, "Sydney", "15 Mar 2019", "16 Mar 2019"),
-//        PlannedTrips(5, "Sydey", "16 Mar 2019", "16 Mar 2019"),
-//        PlannedTrips(6, "Sydeya", "16 Mar 2019", "17 Mar 2019"),
-//        PlannedTrips(7, "Sydeyb", "17 Mar 2019", "18 Mar 2019"),
-//        PlannedTrips(8, "New York", "20 Dec 2019", "01 Jan 2020"),
-//        PlannedTrips(9, "New York", "20 Dec 2019", "01 Jan 2020")
-//    )
+
     private lateinit var plannedTripsViewModel: PlannedTripsViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        plannedTripsViewModel = ViewModelProviders.of(this).get(PlannedTripsViewModel::class.java)
+
+        println(arguments?.getBundle(NEW_PLANNED_TRIPS))
+        arguments?.getBundle(NEW_PLANNED_TRIPS)?.let {
+            bundle ->
+                println("ayam")
+                val place = bundle.get(EXTRA_PLANNED_PLACE).toString()
+                val startDate = bundle.get(EXTRA_PLANNED_START_DATE).toString()
+                val endDate = bundle.get(EXTRA_PLANNED_END_DATE).toString()
+
+                val newPlannedTrips = PlannedTrips(
+                    place = place,
+                    startDate = startDate,
+                    endDate = endDate
+                )
+                println(newPlannedTrips)
+                plannedTripsViewModel.insert(newPlannedTrips)
+                Toast.makeText(activity, "new planned trip saved", Toast.LENGTH_SHORT).show()
+
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,7 +108,11 @@ class PlannedTripsListFragment: Fragment() {
 
     companion object {
 
-        fun newInstance(): PlannedTripsListFragment = PlannedTripsListFragment()
+        fun newInstance(bundle: Bundle?) = PlannedTripsListFragment().apply {
+            arguments = Bundle().apply {
+                putBundle(NEW_PLANNED_TRIPS, bundle)
+            }
+        }
     }
 
 }

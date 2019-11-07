@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.model.PlannedTrips
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.model.PlannedTripsRepository
 import androidx.annotation.NonNull
-import android.provider.ContactsContract.CommonDataKinds.Note
+
 
 class PlannedTripsViewModel(@NonNull application: Application) : AndroidViewModel(application) {
     private val repository: PlannedTripsRepository
