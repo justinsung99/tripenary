@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tripenary</string>
+    <string name="place_placeholder">Some Place</string>
+    <string name="date_placeholder">01 Jan 2019 &#8211; 02 Jan 2019</string>
+    <string name="add_planned_trips">+ Tambah Rencana Perjalanan</string>
+    <string name="right_arrow">Panah Kanan</string>
+    <string name="planned_trips_label">Rencana Perjalanan Saya</string>
+    <string name="add_new_trips_label">Tambah Rencana Perjalanan Baru</string>
+
+    <string name="label_trip_name">Nama Perjalanan</string>
+    <string name="label_start_date">Tanggal Mulai</string>
+    <string name="label_end_date">Tanggal Selesai</string>
+    <string name="add">Tambah</string>
+    <string name="label_slash">/</string>
+    <string name="date_picker_dialog">date picker dialog</string>
+    <string name="dd_placeholder">01</string>
+    <string name="mm_placeholder">01</string>
+    <string name="yyyy_placeholder">2019</string>
+    <string name="cancel">Batal</string>
+
+</resources>
