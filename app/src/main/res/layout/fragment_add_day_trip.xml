@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/label_day_plans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_new_day_plan_label"
+            android:textStyle="bold"
+            android:textSize="12pt"
+            android:padding="8dp"
+            android:background="@drawable/border"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_plan_title"
+                android:textSize="10pt"
+                android:layout_marginEnd="8dp"
+                />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/day_plan_title_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/border"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/label_day_trip_date"
+                android:textSize="10pt" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    />
+
+                <Spinner
+                    android:id="@+id/day_trip_date_dd_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:dropDownWidth="75dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_slash"
+                    android:textSize="10pt" />
+
+                <Spinner
+                    android:id="@+id/day_trip_date_mm_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:dropDownWidth="75dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_slash"
+                    android:textSize="10pt" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/day_trip_date_yyyy_input"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="@string/yyyy_placeholder" />
+
+                <!--                <ImageButton-->
+                <!--                    android:id="@+id/new_planned_trips_start_date_dialogpicker"-->
+                <!--                    android:layout_width="30dp"-->
+                <!--                    android:layout_height="30dp"-->
+                <!--                    android:layout_marginStart="16dp"-->
+                <!--                    android:contentDescription="@string/date_picker_dialog"-->
+                <!--                    android:src="@drawable/ic_calendar" />-->
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="start">
+                <Button
+                    android:id="@+id/cancel_new_day_plan_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="end">
+                <Button
+                    android:id="@+id/save_new_day_plan_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

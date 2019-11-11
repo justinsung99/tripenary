@@ -18,11 +18,11 @@ import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_END_DA
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_PLACE
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_START_DATE
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.NEW_PLANNED_TRIPS
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_TRIP_ID
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.dayPlans.DayPlansListFragment
 
 
-
-
-class PlannedTripsListFragment: Fragment() {
+class PlannedTripsListFragment: Fragment(), OnItemClickListener {
 
     private lateinit var plannedTripsViewModel: PlannedTripsViewModel
 
@@ -47,7 +47,6 @@ class PlannedTripsListFragment: Fragment() {
                 println(newPlannedTrips)
                 plannedTripsViewModel.insert(newPlannedTrips)
                 Toast.makeText(activity, "new planned trip saved", Toast.LENGTH_SHORT).show()
-
         }
     }
 
@@ -66,7 +65,7 @@ class PlannedTripsListFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Initiate RecyclerView Node
-        val mAdapter = PlannedTripsListAdapter(context)
+        val mAdapter = PlannedTripsListAdapter(context, itemClickListener = this)
         planned_trips_recycler_view.apply {
             // set a LinearLayoutManager to handle Android
             // RecyclerView behavior
@@ -81,12 +80,6 @@ class PlannedTripsListFragment: Fragment() {
             //update RecyclerView
                 plannedTrips -> mAdapter.setPlannedTrips(plannedTrips)
         })
-
-//        plannedTripsViewModel = ViewModelProvider(this).get(PlannedTripsViewModel::class.java)
-//        plannedTripsViewModel.allPlannedTrips.observe(this, Observer { plannedTrips ->
-//            // update the cached copy of trips in adapter
-//            plannedTrips?.let { mAdapter.setPlannedTrips(it) }
-//        })
 
         // set onclick listener on "+ add planned trips" button
         add_planned_trips_button.setOnClickListener {
@@ -106,8 +99,25 @@ class PlannedTripsListFragment: Fragment() {
         }
     }
 
-    companion object {
+    override fun onItemClicked(plannedTrips: PlannedTrips) {
 
+        val bundle = Bundle()
+        bundle.putInt(EXTRA_PLANNED_TRIP_ID, plannedTrips.id)
+        bundle.putString(EXTRA_PLANNED_PLACE, plannedTrips.place)
+
+        val fm = activity?.supportFragmentManager
+
+        val fragment = DayPlansListFragment.newInstance(bundle)
+
+        if (fm != null) {
+            fm.beginTransaction()
+                .replace(R.id.main_fragment, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
+    companion object {
         fun newInstance(bundle: Bundle?) = PlannedTripsListFragment().apply {
             arguments = Bundle().apply {
                 putBundle(NEW_PLANNED_TRIPS, bundle)

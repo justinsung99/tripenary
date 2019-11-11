@@ -33,4 +33,11 @@
         <item>11</item><item>12</item>
     </string-array>
 
+    <string name="day_plans_label">Day Plans</string>
+    <string name="add_day_plan">+ Add Day Plan</string>
+    <string name="day_plan_date_placeholder">27 Aug 2019</string>
+    <string name="day_plan_title_placeholder">Arrival</string>
+    <string name="add_new_day_plan_label">Add New Day Plan</string>
+    <string name="label_plan_title">Plan Title</string>
+    <string name="label_day_trip_date">Plan Date</string>
 </resources>

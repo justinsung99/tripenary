@@ -2,7 +2,6 @@ package id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.R
@@ -18,8 +17,12 @@ class PlannedTripsViewHolder(inflater: LayoutInflater, parent:ViewGroup) :
         mDateView = itemView.findViewById(R.id.planned_trips_date)
     }
 
-    fun bind(plannedTrips: PlannedTrips) {
+    fun bind(plannedTrips: PlannedTrips, clickListener: OnItemClickListener) {
         mPlaceView?.text = plannedTrips.place
         mDateView?.text = plannedTrips.startDate + " - " + plannedTrips.endDate
+
+        itemView.setOnClickListener {
+            clickListener.onItemClicked(plannedTrips)
+        }
     }
 }

@@ -12,7 +12,7 @@ class PlannedTripsRepository(application: Application) {
     private val allPlannedTrips: LiveData<List<PlannedTrips>>
 
     init {
-        val database = PlannedTripsDatabase.getInstance(application)
+        val database = TripenaryDatabase.getInstance(application)
         plannedTripsDao = database.plannedTripsDao()
         allPlannedTrips = plannedTripsDao.all()
     }

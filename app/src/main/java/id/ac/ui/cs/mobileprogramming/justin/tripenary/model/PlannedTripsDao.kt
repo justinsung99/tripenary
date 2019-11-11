@@ -19,9 +19,6 @@ interface PlannedTripsDao {
     @Update
     fun update(plannedTrips: PlannedTrips)
 
-//    @Insert(onConflict = OnConflictStrategy.IGNORE)
-//    suspend fun insert(plannedTrip: PlannedTrips)
-
     @Query("DELETE FROM planned_trips")
     fun deleteAll()
 }

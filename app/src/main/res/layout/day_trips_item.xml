@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/planned_trip_item"
+    android:id="@+id/day_plan_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
@@ -14,22 +14,22 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/planned_trips_date"
+            android:id="@+id/day_plan_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="@string/date_placeholder" />
+            android:text="@string/day_plan_date_placeholder" />
 
         <TextView
-            android:id="@+id/planned_trips_place"
+            android:id="@+id/day_plan_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="@string/place_placeholder"
+            android:text="@string/day_plan_title_placeholder"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -40,7 +40,7 @@
         android:gravity="end">
 
         <ImageView
-            android:id="@+id/planned_trip_item_arrow_right"
+            android:id="@+id/arrow_right"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_gravity="end"
