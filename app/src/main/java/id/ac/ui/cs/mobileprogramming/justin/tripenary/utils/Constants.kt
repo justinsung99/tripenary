@@ -1,7 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.justin.tripenary.utils
 
 /** The base URL of the API */
-const val BASE_URL: String = "https://jsonplaceholder.typicode.com"
+const val BASE_URL: String = "https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyBIFUkxAq_mg_SKqEO-FAKaR987E4tj1iQ"
 
 /** string key constant used primarily in adding new planned trips */
 const val EXTRA_PLANNED_PLACE = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_PLANNED_PLACE"
@@ -12,7 +12,6 @@ const val NEW_PLANNED_TRIPS = "id.ac.ui.cs.mobileprogramming.justin.tripenary.NE
 const val NEW_DAY_PLAN = "id.ac.ui.cs.mobileprogramming.justin.tripenary.NEW_DAY_PLAN"
 
 const val NEW_EVENT_PLAN = "id.ac.ui.cs.mobileprogramming.justin.tripenary.NEW_EVENT_PLAN"
-
 
 const val EXTRA_DAY_PLAN_TITLE = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_DAY_PLAN_TITLE"
 const val EXTRA_DAY_PLAN_DATE = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_DAY_PLAN_DATE"
@@ -31,3 +30,7 @@ const val EXTRA_EVENT_PLAN_ATTACHMENT = "id.ac.ui.cs.mobileprogramming.justin.tr
 const val PICK_IMAGE = 110 // random number
 
 const val CHANNEL_ID = "Tripenary.notification.success.create"
+
+fun searchPlace(input: String) {
+    val api = BASE_URL + String.format("&input=$input")
+}

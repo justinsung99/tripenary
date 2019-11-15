@@ -77,4 +77,9 @@ dependencies {
 
     // Coroutines
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "com.jesualex.android:autocompletelocation:1.1"
+    implementation 'com.google.android.libraries.places:places:2.1.0'
+
 }

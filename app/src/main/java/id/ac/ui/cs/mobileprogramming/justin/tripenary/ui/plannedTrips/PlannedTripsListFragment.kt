@@ -1,7 +1,9 @@
 package id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +16,7 @@ import id.ac.ui.cs.mobileprogramming.justin.tripenary.R
 import kotlinx.android.synthetic.main.fragment_planned_trips.*
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.addPlannedTrips.AddPlannedTripsFragment
 import androidx.lifecycle.ViewModelProviders
+
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_END_DATE
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_PLACE
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_START_DATE
@@ -21,8 +24,9 @@ import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.NEW_PLANNED_TRIPS
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_TRIP_ID
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.dayPlans.DayPlansListFragment
 
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.searchTrip.SearchTripActivity
 
-class PlannedTripsListFragment: Fragment(), OnItemClickListener {
+class PlannedTripsListFragment: Fragment(), OnItemClickListener{
 
     private lateinit var plannedTripsViewModel: PlannedTripsViewModel
 
@@ -96,6 +100,12 @@ class PlannedTripsListFragment: Fragment(), OnItemClickListener {
                 Toast.makeText(activity, "[debug] fm not loaded", Toast.LENGTH_SHORT).show()
             }
 
+        }
+
+        search_place_btn.setOnClickListener {
+            val intent = Intent(activity, SearchTripActivity::class.java)
+
+            startActivity(intent)
         }
     }
 

@@ -10,11 +10,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBIFUkxAq_mg_SKqEO-FAKaR987E4tj1iQ"
+            />
         <activity android:name="id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips.PlannedTripsActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.searchTrip.SearchTripActivity"
+            android:parentActivityName=".ui.plannedTrips.PlannedTripsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.plannedTrips.PlannedTripsActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT"/>
             </intent-filter>
         </activity>
     </application>

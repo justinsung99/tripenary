@@ -48,4 +48,6 @@
 
     <string name="channel_name">Tripenary notification channel</string>
     <string name="channel_description">asd</string>
+    <string name="search_trip_destination">Cari Tempat Perjalanan</string>
+
 </resources>
