@@ -29,3 +29,5 @@ const val EXTRA_EVENT_PLAN_DESCRIPTION = "id.ac.ui.cs.mobileprogramming.justin.t
 const val EXTRA_EVENT_PLAN_ATTACHMENT = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_EVENT_PLAN_ATTACHMENT"
 
 const val PICK_IMAGE = 110 // random number
+
+const val CHANNEL_ID = "Tripenary.notification.success.create"

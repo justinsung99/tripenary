@@ -6,14 +6,13 @@ import android.content.Context
 import android.os.Build
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.R
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.SingleFragmentActivity
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.CHANNEL_ID
 
 class PlannedTripsActivity: SingleFragmentActivity() {
 
-    private val CHANNEL_ID = "Tripenary.notification.success.create"
-
     override fun createFragment() = PlannedTripsListFragment.newInstance(null)
 
-    private fun createNotificationChannel() {
+    override fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

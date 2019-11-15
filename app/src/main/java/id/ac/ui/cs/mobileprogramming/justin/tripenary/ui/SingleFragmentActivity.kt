@@ -14,10 +14,14 @@ abstract class SingleFragmentActivity : AppCompatActivity() {
 
     protected abstract fun createFragment(): Fragment
 
+    protected abstract fun createNotificationChannel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(layoutResId)
+
+        this.createNotificationChannel()
 
         val fm = supportFragmentManager
         var fragment = fm.findFragmentById(R.id.main_fragment)
