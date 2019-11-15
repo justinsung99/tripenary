@@ -27,5 +27,25 @@
     <string name="add_new_day_plan_label">Tambah Rencana Harian Baru</string>
     <string name="label_plan_title">Judul Rencana</string>
     <string name="label_day_trip_date">Plan Date</string>
+    <string name="event_plans_label">Judul Kegiatan Saya</string>
+    <string name="add_new_event">+ Tambah Kegiatan Baru</string>
+    <string name="event_plan_time_placeholder">09:00 &#8211; 10:00</string>
+    <string name="event_plan_title_placeholder">Kedatangan</string>
+    <string name="location_icon">Ikon Lokasi</string>
+    <string name="event_location_placeholder">Jakarta</string>
+    <string name="attachment_icon">Ikon Lampiran</string>
+    <string name="add_new_event_plan_label">Tambah Kegiatan Baru</string>
+    <string name="label_event_name">Nama Kegiatan</string>
+    <string name="start">Mulai</string>
+    <string name="time_h_placeholder">8</string>
+    <string name="label_colon">:</string>
+    <string name="time_minmin_placeholder">00</string>
+    <string name="end">End</string>
 
+    <string name="add_location">Tambah Lokasi</string>
+    <string name="add_attachment">Tambah Lampiran</string>
+    <string name="add_description">Tambah Keterangan</string>
+
+    <string name="channel_name">Tripenary notification channel</string>
+    <string name="channel_description">asd</string>
 </resources>

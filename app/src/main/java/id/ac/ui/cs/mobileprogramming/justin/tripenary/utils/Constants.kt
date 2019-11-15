@@ -11,7 +11,21 @@ const val NEW_PLANNED_TRIPS = "id.ac.ui.cs.mobileprogramming.justin.tripenary.NE
 
 const val NEW_DAY_PLAN = "id.ac.ui.cs.mobileprogramming.justin.tripenary.NEW_DAY_PLAN"
 
+const val NEW_EVENT_PLAN = "id.ac.ui.cs.mobileprogramming.justin.tripenary.NEW_EVENT_PLAN"
+
+
 const val EXTRA_DAY_PLAN_TITLE = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_DAY_PLAN_TITLE"
 const val EXTRA_DAY_PLAN_DATE = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_DAY_PLAN_DATE"
+const val EXTRA_DAY_PLAN_ID = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_DAY_PLAN_ID"
 
 const val EXTRA_PLANNED_TRIP_ID = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_PLANNED_TRIP_ID"
+
+const val EVENTS_BUNDLE = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EVENTS_BUNDLE"
+
+const val EXTRA_EVENT_PLAN_NAME = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_EVENT_PLAN_NAME"
+const val EXTRA_EVENT_PLAN_TIME = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_EVENT_PLAN_TIME"
+const val EXTRA_EVENT_PLAN_LOCATION = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_EVENT_PLAN_LOCATION"
+const val EXTRA_EVENT_PLAN_DESCRIPTION = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_EVENT_PLAN_DESCRIPTION"
+const val EXTRA_EVENT_PLAN_ATTACHMENT = "id.ac.ui.cs.mobileprogramming.justin.tripenary.EXTRA_EVENT_PLAN_ATTACHMENT"
+
+const val PICK_IMAGE = 110 // random number

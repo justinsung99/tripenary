@@ -15,6 +15,7 @@ import id.ac.ui.cs.mobileprogramming.justin.tripenary.model.DayPlans
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.addDayPlan.AddDayPlanFragment
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.*
 import kotlinx.android.synthetic.main.fragment_day_trips.*
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.dayEvents.DayEventsListFragment
 
 class DayPlansListFragment : Fragment(), OnItemClickListener {
 
@@ -40,18 +41,7 @@ class DayPlansListFragment : Fragment(), OnItemClickListener {
                 tripId = bundle.get(EXTRA_PLANNED_TRIP_ID).toString().toInt()
                 tripPlace = bundle.get(EXTRA_PLANNED_PLACE).toString()
 
-
             }
-
-//            if(tripId != -1) {
-//                dayPlansViewModel.getAllDayPlans(tripId).observe(this, Observer<List<DayPlans>> {
-//                    //update RecyclerView
-//                        dayPlans -> dayPlansAdapter.setDayPlans(dayPlans)
-//                })
-//            } else {
-//                println("[ERROR] trip id is not initialized")
-//            }
-
         }
     }
 
@@ -114,18 +104,19 @@ class DayPlansListFragment : Fragment(), OnItemClickListener {
     override fun onItemClicked(dayPlans: DayPlans) {
 
         val bundle = Bundle()
-//        bundle.putString(EXTRA_PLANNED_PLACE, plannedTrips.place)
+        bundle.putString(EXTRA_DAY_PLAN_TITLE, dayPlans.title)
+        bundle.putInt(EXTRA_DAY_PLAN_ID, dayPlans.id)
 //
-//        val fm = activity?.supportFragmentManager
-//
-//        val fragment = DayPlansListFragment.newInstance(bundle)
-//
-//        if (fm != null) {
-//            fm.beginTransaction()
-//                .replace(R.id.main_fragment, fragment)
-//                .addToBackStack(null)
-//                .commit()
-//        }
+        val fm = activity?.supportFragmentManager
+
+        val fragment = DayEventsListFragment.newInstance(bundle)
+
+        if (fm != null) {
+            fm.beginTransaction()
+                .replace(R.id.main_fragment, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     private fun saveNewDayTrip(viewModel: DayPlansViewModel ,bundle: Bundle) {
