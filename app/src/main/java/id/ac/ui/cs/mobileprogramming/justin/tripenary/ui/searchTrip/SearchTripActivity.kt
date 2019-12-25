@@ -1,7 +1,10 @@
 package id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.searchTrip
 
+import android.content.Context
+import android.net.ConnectivityManager
 import android.os.Bundle;
 import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 
@@ -29,6 +32,10 @@ class SearchTripActivity : FragmentActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.search_destination)
 
+        if(!isNetworkAvailable()) {
+            Toast.makeText(this, "No Internet Connection Detected! please check your internet connection", Toast.LENGTH_LONG).show()
+        }
+
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
@@ -48,6 +55,14 @@ class SearchTripActivity : FragmentActivity(),
         autoCompleteLocation.setPlaceFields(PlaceUtils.defaultFields)
 
     }
+
+    private fun isNetworkAvailable(): Boolean {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected
+    }
+
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
