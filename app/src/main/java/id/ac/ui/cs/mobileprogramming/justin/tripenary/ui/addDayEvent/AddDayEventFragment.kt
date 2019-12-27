@@ -27,7 +27,6 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.PermissionChecker.PERMISSION_DENIED
 import androidx.core.content.PermissionChecker.checkSelfPermission
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.plannedTrips.PlannedTripsActivity
-import java.util.*
 import kotlin.random.Random
 
 class AddDayEventFragment : Fragment() {
@@ -97,8 +96,6 @@ class AddDayEventFragment : Fragment() {
             endAMPMSpinner.adapter = arrayAdapter
         }
 
-//        startDDSpinner.onItemSelectedListener = this
-//        startMMSpinner.onItemSelectedListener = this
 
         return view
     }
@@ -143,7 +140,7 @@ class AddDayEventFragment : Fragment() {
         })
 
         event_plan_location_input.setOnFocusChangeListener {
-                v, hasFocus ->
+                _, hasFocus ->
             println(hasFocus)
             if(hasFocus) {
                 if (eventLocation == "") {
@@ -155,7 +152,7 @@ class AddDayEventFragment : Fragment() {
         }
 
         event_plan_description_input.setOnFocusChangeListener {
-                v, hasFocus ->
+                _, hasFocus ->
             println(hasFocus)
             if(hasFocus) {
                 if (eventDesc == "") {
@@ -179,7 +176,6 @@ class AddDayEventFragment : Fragment() {
                 //system OS is < Marshmallow
                 pickImageFromGallery()
             }
-//            Toast.makeText(activity, "click!", Toast.LENGTH_SHORT).show()
         }
 
         save_new_event_plan_btn.setOnClickListener{
@@ -260,7 +256,7 @@ class AddDayEventFragment : Fragment() {
 
         val fragment = DayEventsListFragment.newInstance(bundle)
 
-        // Create an explicit intent for an Activity in your app
+
         val intent = Intent(context!!, PlannedTripsActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
@@ -277,7 +273,7 @@ class AddDayEventFragment : Fragment() {
             .setAutoCancel(true)
 
         with(NotificationManagerCompat.from(context!!)) {
-            // notificationId is a unique int for each notification that you must define
+
             notify(Random.nextInt(), builder.build())
         }
 

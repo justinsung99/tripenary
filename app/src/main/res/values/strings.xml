@@ -89,4 +89,5 @@
     <string name="google_places_key"
         translatable="false"
         templateMergeStrategy="preserve">AIzaSyBIFUkxAq_mg_SKqEO-FAKaR987E4tj1iQ</string>
+    <string name="holiday">Holiday!</string>
 </resources>

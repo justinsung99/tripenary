@@ -23,6 +23,7 @@ import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_START_
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.NEW_PLANNED_TRIPS
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.utils.EXTRA_PLANNED_TRIP_ID
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.dayPlans.DayPlansListFragment
+import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.glAnimation.OpenGLES20Activity
 
 import id.ac.ui.cs.mobileprogramming.justin.tripenary.ui.searchTrip.SearchTripActivity
 
@@ -104,6 +105,12 @@ class PlannedTripsListFragment: Fragment(), OnItemClickListener{
 
         search_place_btn.setOnClickListener {
             val intent = Intent(activity, SearchTripActivity::class.java)
+
+            startActivity(intent)
+        }
+
+        animation_btn.setOnClickListener {
+            val intent = Intent(activity, OpenGLES20Activity::class.java)
 
             startActivity(intent)
         }

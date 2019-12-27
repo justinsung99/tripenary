@@ -3,6 +3,10 @@
     package="id.ac.ui.cs.mobileprogramming.justin.tripenary">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +27,16 @@
         </activity>
 
         <activity android:name=".ui.searchTrip.SearchTripActivity"
+            android:parentActivityName=".ui.plannedTrips.PlannedTripsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.plannedTrips.PlannedTripsActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.glAnimation.OpenGLES20Activity"
             android:parentActivityName=".ui.plannedTrips.PlannedTripsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
